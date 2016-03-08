@@ -13,13 +13,13 @@ public class ISBN13 {
     
     int sum = 0;
     for (int i = 0; i < isbn.length(); i++){
-      if (i % 2 != 0)
+      if ((i + 1)% 2 != 0)
         sum = sum + isbn.charAt(i) - '0';
       else
         sum = sum + (isbn.charAt(i) - '0') * 3;
     } // for i
     
-    sum = 10 - sum % 10;
+    sum = 10 - (sum % 10);
     if (sum == 10)
       System.out.println("The ISBN-13 number is " + isbn + "0");
     else
